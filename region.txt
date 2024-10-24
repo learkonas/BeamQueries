@@ -1,0 +1,260 @@
+"NB: this is syntax for metabase and will need adapting"
+case(
+    contains([Pathway Name],  "City of London") OR 
+    contains([Pathway Name],  "Westminster") OR 
+    contains([Pathway Name],  "Chelsea") OR 
+    contains([Pathway Name],  "Fulham") OR 
+    contains([Pathway Name],  "Wandsworth") OR 
+    contains([Pathway Name],  "Lambeth") OR 
+    contains([Pathway Name],  "Southwark") OR 
+    contains([Pathway Name],  "Hamlets") OR 
+    contains([Pathway Name],  "Islington") OR 
+    contains([Pathway Name],  "Hackney") OR 
+    contains([Pathway Name],  "Camden") OR 
+    contains([Pathway Name],  "Brent") OR 
+    contains([Pathway Name],  "Ealing") OR 
+    contains([Pathway Name],  "Hounslow") OR 
+    contains([Pathway Name],  "upon Thames") OR 
+    contains([Pathway Name],  "Merton") OR 
+    contains([Pathway Name],  "Sutton") OR 
+    contains([Pathway Name],  "Croydon") OR 
+    contains([Pathway Name],  "Bromley") OR 
+    contains([Pathway Name],  "Lewisham") OR 
+    contains([Pathway Name],  "Greenwich") OR 
+    contains([Pathway Name],  "Bexley") OR 
+    contains([Pathway Name],  "Havering") OR 
+    contains([Pathway Name],  "Dagenham") OR 
+    contains([Pathway Name],  "Redbridge") OR 
+    contains([Pathway Name],  "Newham") OR 
+    contains([Pathway Name],  "Waltham") OR 
+    contains([Pathway Name],  "Haringey") OR 
+    contains([Pathway Name],  "Enfield") OR 
+    contains([Pathway Name],  "Kingston") OR 
+    contains([Pathway Name],  "London") OR 
+    contains([Pathway Name],  "Barnet") OR 
+    contains([Pathway Name],  "Harrow") OR 
+    contains([Pathway Name],  "Hillingdon")
+, "London",
+
+    contains([Pathway Name],  "Brighton") OR 
+    contains([Pathway Name],  "Bracknell") OR 
+    contains([Pathway Name],  "Buckinghamshire") OR 
+    contains([Pathway Name],  "Sussex") OR 
+    contains([Pathway Name],  "Hampshire") OR 
+    contains([Pathway Name],  "Wight") OR 
+    contains([Pathway Name],  "Kent") OR 
+    contains([Pathway Name],  "Medway") OR 
+    contains([Pathway Name],  "Milton") OR 
+    contains([Pathway Name],  "Oxford") OR 
+    contains([Pathway Name],  "Portsmouth") OR 
+    contains([Pathway Name],  "Fareham") OR 
+    contains([Pathway Name],  "Havant") OR 
+    contains([Pathway Name],  "Reading") OR 
+    contains([Pathway Name],  "Maidenhead") OR 
+    contains([Pathway Name],  "Slough") OR 
+    contains([Pathway Name],  "Southampton") OR 
+    contains([Pathway Name],  "Rother Council") OR 
+    contains([Pathway Name],  "Rother 2") OR 
+    contains([Pathway Name],  "Havant") OR 
+    contains([Pathway Name],  "Arun") OR 
+    contains([Pathway Name],  "Swale") OR 
+    contains([Pathway Name],  "Dartford") OR 
+    contains([Pathway Name],  "New Forest") OR 
+    contains([Pathway Name],  "Gosport") OR 
+    contains([Pathway Name],  "Tunbridge") OR 
+    contains([Pathway Name],  "Surrey") OR 
+    contains([Pathway Name],  "Berkshire") OR 
+    contains([Pathway Name],  "Eastleigh") OR 
+    contains([Pathway Name],  "Chichester") OR 
+    contains([Pathway Name],  "Ashford") OR 
+    contains([Pathway Name],  "Windsor") OR 
+    contains([Pathway Name],  "Crawley") OR 
+    contains([Pathway Name],  "Maidenhead") OR 
+    contains([Pathway Name],  "Thanet") OR 
+    contains([Pathway Name],  "Maidstone") OR 
+    contains([Pathway Name],  "Wokingham") 
+, "South East",
+
+    contains([Pathway Name],  "Bedford") OR 
+    contains([Pathway Name],  "Cambridge") OR 
+    contains([Pathway Name],  "Essex") OR 
+    contains([Pathway Name],  "Hertford") OR 
+    contains([Pathway Name],  "Luton") OR 
+    contains([Pathway Name],  "North Herts") OR 
+    contains([Pathway Name],  "Norfolk") OR 
+    contains([Pathway Name],  "Welwyn") OR 
+    contains([Pathway Name],  "Peterborough") OR 
+    contains([Pathway Name],  "Southend") OR 
+    contains([Pathway Name],  "Wealden") OR 
+    contains([Pathway Name],  "Suffolk") OR 
+    contains([Pathway Name],  "Thurrock")
+, "East of England",
+
+
+    contains([Pathway Name],  "Derby") OR 
+    contains([Pathway Name],  "Lincolnshire") OR 
+    contains([Pathway Name],  "Leicester") OR 
+    contains([Pathway Name],  "Northampton") OR 
+    contains([Pathway Name],  "Blaby") OR 
+    contains([Pathway Name],  "Bosworth") OR 
+    contains([Pathway Name],  "Nottingham")
+, "East Midlands",
+
+    contains([Pathway Name],  "Bradford") OR 
+    contains([Pathway Name],  "Doncaster") OR 
+    contains([Pathway Name],  "Calderdale") OR 
+    contains([Pathway Name],  "York") OR 
+    contains([Pathway Name],  "Hull") OR 
+    contains([Pathway Name],  "Kirklees") OR 
+    contains([Pathway Name],  "Leeds") OR 
+    contains([Pathway Name],  "Lincoln") OR 
+    contains([Pathway Name],  "Rotherham") OR 
+    contains([Pathway Name],  "Sheffield") OR 
+    contains([Pathway Name],  "Barnsley") OR 
+    contains([Pathway Name],  "Wakefield")
+, "Yorkshire",
+
+    contains([Pathway Name],  "Darlington") OR 
+    contains([Pathway Name],  "Durham") OR 
+    contains([Pathway Name],  "Gateshead") OR 
+    contains([Pathway Name],  "Hartlepool") OR 
+    contains([Pathway Name],  "Middlesbrough") OR 
+    contains([Pathway Name],  "Newcastle") OR 
+    contains([Pathway Name],  "Northumberland") OR 
+    contains([Pathway Name],  "Tyne") OR 
+    contains([Pathway Name],  "Redcar") OR 
+    contains([Pathway Name],  "NE England") OR 
+    contains([Pathway Name],  "Sunderland") OR 
+    contains([Pathway Name],  "Stockton")
+, "North East",
+
+    contains([Pathway Name],  "Blackburn") OR 
+    contains([Pathway Name],  "Blackpool") OR 
+    contains([Pathway Name],  "Bolton") OR 
+    contains([Pathway Name],  "Bury") OR 
+    contains([Pathway Name],  "Cheshire") OR 
+    contains([Pathway Name],  "Cumberland") OR 
+    contains([Pathway Name],  "Halton") OR 
+    contains([Pathway Name],  "Knowsley") OR 
+    contains([Pathway Name],  "Lancashire") OR 
+    contains([Pathway Name],  "Liverpool") OR 
+    contains([Pathway Name],  "Manchester") OR 
+    contains([Pathway Name],  "Preston") OR 
+    contains([Pathway Name],  "Chorley") OR 
+    contains([Pathway Name],  "Oldham") OR 
+    contains([Pathway Name],  "Rochdale") OR 
+    contains([Pathway Name],  "Salford") OR 
+    contains([Pathway Name],  "Sefton") OR 
+    contains([Pathway Name],  "St Helens") OR 
+    contains([Pathway Name],  "Stockport") OR 
+    contains([Pathway Name],  "Tameside") OR 
+    contains([Pathway Name],  "Trafford") OR 
+    contains([Pathway Name],  "Warrington") OR 
+    contains([Pathway Name],  "Westmorland") OR 
+    contains([Pathway Name],  "Wigan") 
+, "North West",
+
+    contains([Pathway Name],  "Birmingham") OR 
+    contains([Pathway Name],  "Coventry") OR 
+    contains([Pathway Name],  "Dudley") OR 
+    contains([Pathway Name],  "Herefordshire") OR 
+    contains([Pathway Name],  "Sandwell") OR 
+    contains([Pathway Name],  "Redditch") OR 
+    contains([Pathway Name],  "Shropshire") OR 
+    contains([Pathway Name],  "Solihull") OR 
+    contains([Pathway Name],  "Staffordshire") OR 
+    contains([Pathway Name],  "Stoke") OR 
+    contains([Pathway Name],  "Telford") OR 
+    contains([Pathway Name],  "Lichfield") OR 
+    contains([Pathway Name],  "Rugby") OR 
+    contains([Pathway Name],  "Walsall") OR 
+    contains([Pathway Name],  "Warwickshire") OR 
+    contains([Pathway Name],  "Wolverhampton") OR 
+    contains([Pathway Name],  "Worcestershire")
+, "West Midlands",
+
+    contains([Pathway Name],  "Bath") OR 
+    contains([Pathway Name],  "Somerset") OR 
+    contains([Pathway Name],  "Bournemouth") OR 
+    contains([Pathway Name],  "BCP") OR 
+    contains([Pathway Name],  "Christchurch") OR 
+    contains([Pathway Name],  "Bristol") OR 
+    contains([Pathway Name],  "Wiltshire") OR 
+    contains([Pathway Name],  "Cornwall") OR 
+    contains([Pathway Name],  "Devon") OR 
+    contains([Pathway Name],  "Dorset") OR 
+    contains([Pathway Name],  "Gloucester") OR 
+    contains([Pathway Name],  "Plymouth") OR 
+    contains([Pathway Name],  "Scilly") OR 
+    contains([Pathway Name],  "Swindon") OR 
+    contains([Pathway Name],  "Torbay") 
+, "South West",
+
+    contains([Pathway Name],  "Aberdeen") OR 
+    contains([Pathway Name],  "Orkney") OR 
+    contains([Pathway Name],  "Shetland") OR 
+    contains([Pathway Name],  "Eilean") OR 
+    contains([Pathway Name],  "Inver") OR 
+    contains([Pathway Name],  "Inverclyde") OR 
+    contains([Pathway Name],  "Clackmannanshire") OR 
+    contains([Pathway Name],  "Argyll") OR 
+    contains([Pathway Name],  "Midlothian") OR 
+    contains([Pathway Name],  "Stirling") OR 
+    contains([Pathway Name],  "Moray") OR 
+    contains([Pathway Name],  "Lothian") OR 
+    contains([Pathway Name],  "Dunbartonshire") OR 
+    contains([Pathway Name],  "Ayrshire") OR 
+    contains([Pathway Name],  "Borders") OR 
+    contains([Pathway Name],  "Scottish") OR 
+    contains([Pathway Name],  "Dundee") OR 
+    contains([Pathway Name],  "Dumfries") OR 
+    contains([Pathway Name],  "Perth") OR 
+    contains([Pathway Name],  "Falkirk") OR 
+    contains([Pathway Name],  "Renfrewshire") OR 
+    contains([Pathway Name],  "West Lothian") OR 
+    contains([Pathway Name],  "South Lanarkshire") OR 
+    contains([Pathway Name],  "North Lanarkshire") OR 
+    contains([Pathway Name],  "Fife") OR 
+    contains([Pathway Name],  "Edinburgh") OR 
+    contains([Pathway Name],  "Scotland") OR 
+    contains([Pathway Name],  "Glasgow")
+, "Scotland",
+
+    contains([Pathway Name],  "Blaenau") OR 
+    contains([Pathway Name],  "Bridgend") OR 
+    contains([Pathway Name],  "Caerphilly") OR 
+    contains([Pathway Name],  "Cardiff") OR 
+    contains([Pathway Name],  "Carmarthenshire") OR 
+    contains([Pathway Name],  "Ceredigion") OR 
+    contains([Pathway Name],  "Denbighs") OR 
+    contains([Pathway Name],  "Flintshire") OR 
+    contains([Pathway Name],  "Gwynedd") OR 
+    contains([Pathway Name],  "Anglesey") OR 
+    contains([Pathway Name],  "Methyr") OR 
+    contains([Pathway Name],  "Tydfil") OR 
+    contains([Pathway Name],  "Monmouths") OR 
+    contains([Pathway Name],  "Neath Port") OR 
+    contains([Pathway Name],  "Newport") OR 
+    contains([Pathway Name],  "Pembroke") OR 
+    contains([Pathway Name],  "Powys") OR 
+    contains([Pathway Name],  "Rhondda") OR 
+    contains([Pathway Name],  "Swansea") OR 
+    contains([Pathway Name],  "Conwy") OR 
+    contains([Pathway Name],  "Torfaen") OR 
+    contains([Pathway Name],  "Glamorg") OR 
+    contains([Pathway Name],  "Wales") OR 
+    contains([Pathway Name],  "Wrexham")
+, "Wales",
+
+    contains([Pathway Name],  "Antrim") OR 
+    contains([Pathway Name],  "Ards") OR 
+    contains([Pathway Name],  "Armagh") OR 
+    contains([Pathway Name],  "Belfast") OR 
+    contains([Pathway Name],  "Causeway") OR 
+    contains([Pathway Name],  "Derry") OR 
+    contains([Pathway Name],  "Fermanagh") OR 
+    contains([Pathway Name],  "Ulster") OR 
+    contains([Pathway Name],  "Newry")
+, "Northern Ireland"
+)
+
