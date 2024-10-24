@@ -1,3 +1,111 @@
+"NB: this is the SQL version"
+CASE
+    -- London region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%City of London%', '%Westminster%', '%Chelsea%', '%Fulham%', 
+        '%Wandsworth%', '%Lambeth%', '%Southwark%', '%Hamlets%', 
+        '%Islington%', '%Hackney%', '%Camden%', '%Brent%', '%Ealing%', 
+        '%Hounslow%', '%upon Thames%', '%Merton%', '%Sutton%', '%Croydon%', 
+        '%Bromley%', '%Lewisham%', '%Greenwich%', '%Bexley%', '%Havering%', 
+        '%Dagenham%', '%Redbridge%', '%Newham%', '%Waltham%', '%Haringey%', 
+        '%Enfield%', '%Kingston%', '%London%', '%Barnet%', '%Harrow%', 
+        '%Hillingdon%'
+    ]) THEN 'London'
+
+    -- South East region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Brighton%', '%Bracknell%', '%Buckinghamshire%', '%Sussex%', 
+        '%Hampshire%', '%Wight%', '%Kent%', '%Medway%', '%Milton%', 
+        '%Oxford%', '%Portsmouth%', '%Fareham%', '%Havant%', '%Reading%', 
+        '%Maidenhead%', '%Slough%', '%Southampton%', '%Rother Council%', 
+        '%Rother 2%', '%Arun%', '%Swale%', '%Dartford%', '%New Forest%', 
+        '%Gosport%', '%Tunbridge%', '%Surrey%', '%Berkshire%', '%Eastleigh%', 
+        '%Chichester%', '%Ashford%', '%Windsor%', '%Crawley%', '%Thanet%', 
+        '%Maidstone%', '%Wokingham%'
+    ]) THEN 'South East'
+
+    -- East of England region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Bedford%', '%Cambridge%', '%Essex%', '%Hertford%', '%Luton%', 
+        '%North Herts%', '%Norfolk%', '%Welwyn%', '%Peterborough%', 
+        '%Southend%', '%Wealden%', '%Suffolk%', '%Thurrock%'
+    ]) THEN 'East of England'
+
+    -- East Midlands region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Derby%', '%Lincolnshire%', '%Leicester%', '%Northampton%', 
+        '%Blaby%', '%Bosworth%', '%Nottingham%'
+    ]) THEN 'East Midlands'
+
+    -- Yorkshire region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Bradford%', '%Doncaster%', '%Calderdale%', '%York%', '%Hull%', 
+        '%Kirklees%', '%Leeds%', '%Lincoln%', '%Rotherham%', '%Sheffield%', 
+        '%Barnsley%', '%Wakefield%'
+    ]) THEN 'Yorkshire'
+
+    -- North East region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Darlington%', '%Durham%', '%Gateshead%', '%Hartlepool%', 
+        '%Middlesbrough%', '%Newcastle%', '%Northumberland%', '%Tyne%', 
+        '%Redcar%', '%NE England%', '%Sunderland%', '%Stockton%'
+    ]) THEN 'North East'
+
+    -- North West region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Blackburn%', '%Blackpool%', '%Bolton%', '%Bury%', '%Cheshire%', 
+        '%Cumberland%', '%Halton%', '%Knowsley%', '%Lancashire%', 
+        '%Liverpool%', '%Manchester%', '%Preston%', '%Chorley%', '%Oldham%', 
+        '%Rochdale%', '%Salford%', '%Sefton%', '%St Helens%', '%Stockport%', 
+        '%Tameside%', '%Trafford%', '%Warrington%', '%Westmorland%', '%Wigan%'
+    ]) THEN 'North West'
+
+    -- West Midlands region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Birmingham%', '%Coventry%', '%Dudley%', '%Herefordshire%', 
+        '%Sandwell%', '%Redditch%', '%Shropshire%', '%Solihull%', 
+        '%Staffordshire%', '%Stoke%', '%Telford%', '%Lichfield%', '%Rugby%', 
+        '%Walsall%', '%Warwickshire%', '%Wolverhampton%', '%Worcestershire%'
+    ]) THEN 'West Midlands'
+
+    -- South West region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Bath%', '%Somerset%', '%Bournemouth%', '%BCP%', '%Christchurch%', 
+        '%Bristol%', '%Wiltshire%', '%Cornwall%', '%Devon%', '%Dorset%', 
+        '%Gloucester%', '%Plymouth%', '%Scilly%', '%Swindon%', '%Torbay%'
+    ]) THEN 'South West'
+
+    -- Scotland region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Aberdeen%', '%Orkney%', '%Shetland%', '%Eilean%', '%Inver%', 
+        '%Inverclyde%', '%Clackmannanshire%', '%Argyll%', '%Midlothian%', 
+        '%Stirling%', '%Moray%', '%Lothian%', '%Dunbartonshire%', 
+        '%Ayrshire%', '%Borders%', '%Scottish%', '%Dundee%', '%Dumfries%', 
+        '%Perth%', '%Falkirk%', '%Renfrewshire%', '%West Lothian%', 
+        '%South Lanarkshire%', '%North Lanarkshire%', '%Fife%', 
+        '%Edinburgh%', '%Scotland%', '%Glasgow%'
+    ]) THEN 'Scotland'
+
+    -- Wales region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Blaenau%', '%Bridgend%', '%Caerphilly%', '%Cardiff%', 
+        '%Carmarthenshire%', '%Ceredigion%', '%Denbighs%', '%Flintshire%', 
+        '%Gwynedd%', '%Anglesey%', '%Methyr%', '%Tydfil%', '%Monmouths%', 
+        '%Neath Port%', '%Newport%', '%Pembroke%', '%Powys%', '%Rhondda%', 
+        '%Swansea%', '%Conwy%', '%Torfaen%', '%Glamorg%', '%Wales%', 
+        '%Wrexham%'
+    ]) THEN 'Wales'
+
+    -- Northern Ireland region
+    WHEN "public"."contracts"."name" ILIKE ANY (ARRAY[
+        '%Antrim%', '%Ards%', '%Armagh%', '%Belfast%', '%Causeway%', 
+        '%Derry%', '%Fermanagh%', '%Ulster%', '%Newry%'
+    ]) THEN 'Northern Ireland'
+
+    ELSE 'Other'
+END as "Region"
+
+
 "NB: this is syntax for metabase and will need adapting"
 case(
     contains([Pathway Name],  "City of London") OR 
