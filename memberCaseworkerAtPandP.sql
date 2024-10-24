@@ -1,5 +1,6 @@
 -- BigQuery SQL syntax
 WITH CaseworkerChanges AS (
+  -- finds the new and old caseworker for every caseworker, for every change. A record is made for all changes, except the first caseworker assignment
   SELECT
     v.id,
     v."item_id" AS "Member_ID",
@@ -22,6 +23,7 @@ WITH CaseworkerChanges AS (
     AND v."object_changes" #>> '{caseworker_id}' IS NOT NULL
 ),
 LatestMemberPastPresent AS (
+  -- finds the latest P&P date for each member
   SELECT DISTINCT ON (member_id)
     id,
     member_id,
@@ -32,7 +34,7 @@ LatestMemberPastPresent AS (
     member_id, created_at DESC
 ),
 EarliestCaseworkerChange AS (
-  -- Find the earliest caseworker change after the specified point
+  -- Find the earliest caseworker change after that P&P date
   SELECT distinct on (lmpp."member_id")
     lmpp."member_id" as "Member_ID",
     cc."created_at" as "CaseworkerChangeCreatedAt",
@@ -50,7 +52,7 @@ EarliestCaseworkerChange AS (
     cc."created_at" ASC
 ),
 LatestCaseworkerChange AS (
-  -- Find the latest caseworker change before the specified point
+  -- Find the latest caseworker change before that P&P date
   SELECT distinct on (lmpp."member_id")
     lmpp."member_id" as "Member_ID",
     cc."created_at" as "CaseworkerChangeCreatedAt",
@@ -68,6 +70,7 @@ LatestCaseworkerChange AS (
     cc."created_at" DESC
 )
 SELECT
+  -- coalesces the two caseworker IDs; they should be equal unless one is null
   COALESCE(e."Member_ID", l."Member_ID") AS "Member_ID",
   concat(members.first_name, ' ', members.last_name) as "Member",
   COALESCE(e."PastPresent_form_at", l."PastPresent_form_at") AS "PastPresent_form_at",
@@ -79,6 +82,6 @@ FULL OUTER JOIN
   LatestCaseworkerChange l
 ON e."Member_ID" = l."Member_ID"
 JOIN members on COALESCE(e."Member_ID", l."Member_ID") = members.id
-JOIN caseworkers cw ON COALESCE(e."Old_Caseworker_ID", l."New_Caseworker_ID") = cast(cw."id" as text)
+JOIN caseworkers cw ON COALESCE(e."Old_Caseworker_ID", l."New_Caseworker_ID") = cast(cw."id" as text) -- sometimes the caseworker IDs from the versions table are nulls, or some other value which makes it annoying to convert them to integer, so I went the other way
 ORDER BY
   COALESCE(e."Member_ID", l."Member_ID");
