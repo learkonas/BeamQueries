@@ -1,27 +1,25 @@
 import pandas as pd
 
-# Read the CSV file
 df = pd.read_csv('postcodes.csv')
 
-# Store the original number of rows
 original_rows = len(df)
 
-# Assuming the columns are named 'postcode' and 'borough'
+# Assuming the columns are named 'postcode' and 'brma_name'
 df['prefix'] = df['postcode'].str[:2]  # Take the first 2 characters as the initial prefix
 
-# Function to check if all postcodes with a given prefix map to the same borough
+# Function to check if all postcodes with a given prefix map to the same brma_name
 def check_prefix(group):
-    if len(group['borough'].unique()) == 1:
-        return pd.Series({'postcode': group['prefix'].iloc[0], 'borough': group['borough'].iloc[0]})
-    return pd.Series()  # Return an empty Series instead of None
+    if len(group['brma_name'].unique()) == 1:
+        return pd.Series({'postcode': group['prefix'].iloc[0], 'brma_name': group['brma_name'].iloc[0]})
+    return pd.Series({'postcode': None, 'brma_name': None})
 
 # Start with 2-character prefix and increase specificity if needed
-new_df = pd.DataFrame(columns=['postcode', 'borough'])
+new_df = pd.DataFrame(columns=['postcode', 'brma_name'])
 
-for prefix_length in range(2, 9):
+for prefix_length in range(2, 9): # assumes postcodes are not longer than 9 characters including the space
     # Group by current prefix and apply the check function
     result = df.groupby(df['postcode'].str[:prefix_length]).apply(check_prefix)
-    result = result.dropna().reset_index(drop=True)  # Remove any empty results
+    result = result.dropna().reset_index(drop=True)  
     
     # Add the new prefix-based rows to the result
     new_df = pd.concat([new_df, result], ignore_index=True)
@@ -38,12 +36,10 @@ for prefix_length in range(2, 9):
 
 # Add any remaining individual postcodes to the new dataframe
 if not df.empty:
-    new_df = pd.concat([new_df, df[['postcode', 'borough']]], ignore_index=True)
+    new_df = pd.concat([new_df, df[['postcode', 'brma_name']]], ignore_index=True)
 
-# Sort the dataframe by postcode
+# Sort the dataframe by postcode and save to CSV
 new_df = new_df.sort_values('postcode').reset_index(drop=True)
-
-# Save the new dataframe to a CSV file
 new_df.to_csv('postcodes2.csv', index=False)
 
 print(f"Original number of rows: {original_rows}")
